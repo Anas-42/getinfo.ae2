@@ -12,7 +12,7 @@ import AboutSection from "./components/sections/AboutSection";
 import WhyBuild from "./components/sections/WhyBuild";
 import ServicesGrid from "./components/sections/ServicesGrid";
 import TechStrip from "./components/sections/TechStrip";
-import BuildProcess from "./components/sections/BuildProcess";
+import buildpath from "./components/sections/buildpath";
 import JoinForm from "./components/sections/JoinForm";
 
 export default function App() {
@@ -32,7 +32,7 @@ export default function App() {
         
         <ServicesGrid />
         <TechStrip />
-        <BuildProcess />
+        <buildpath />
         <JoinForm />
       </main>
 
