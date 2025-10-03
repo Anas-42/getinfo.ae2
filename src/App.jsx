@@ -7,7 +7,7 @@ import Footer from "./components/layout/Footer";
 // Sections
 import Hero from "./components/sections/Hero";
 import ContactStrip from "./components/sections/ContactStrip";
-import Intro from "./components/sectionsIntro";          // ⬅️ make sure file is Intro.jsx
+import Intro from "./components/sections/Intro";          // ⬅️ make sure file is Intro.jsx
 import AboutSection from "./components/sections/AboutSection";
 import WhyBuild from "./components/sections/WhyBuild";
 import ServicesGrid from "./components/sections/ServicesGrid";
