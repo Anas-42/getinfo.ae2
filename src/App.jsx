@@ -7,7 +7,7 @@ import Footer from "./components/layout/Footer";
 // Sections
 import Hero from "./components/sections/Hero";
 import ContactStrip from "./components/sections/ContactStrip";
-import Intro from "./components/sections/IntroSection";          // ⬅️ make sure file is Intro.jsx
+import IntroSection from "./components/sections/IntroSection";
 import AboutSection from "./components/sections/AboutSection";
 import WhyBuild from "./components/sections/WhyBuild";
 import ServicesGrid from "./components/sections/ServicesGrid";
@@ -25,7 +25,7 @@ export default function App() {
         <ContactStrip />
 
         {/* 3 requested sections */}
-        <Intro />
+        <IntroSection />
         <AboutSection />
         <WhyBuild />
 
