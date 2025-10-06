@@ -27,9 +27,9 @@ export default function Intro() {
       </Container>
 
       {/* wave passing through this section */}
-      <svg className="pointer-events-none absolute inset-x-0 -bottom-12 -z-10" viewBox="0 0 1440 220" fill="none" preserveAspectRatio="none">
+      {/* <svg className="pointer-events-none absolute inset-x-0 -bottom-12 -z-10" viewBox="0 0 1440 220" fill="none" preserveAspectRatio="none">
         <path d="M-10 90c180 90 360 90 540 30s360-120 540-60 360 180 540 180" stroke="#6fd0df" strokeWidth="6"/>
-      </svg>
+      </svg> */}
     </section>
   );
 }
