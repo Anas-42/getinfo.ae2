@@ -22,7 +22,7 @@ export default function ContactStrip(){
       <Container>
         <Card className="mt-6 lg:mt-10 rounded-[32px] sm:rounded-[56px] overflow-hidden">
           <div className="grid md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-white/20">
-            <Item icon={<Phone/>} title="Give Us a Call" text="+971 0501088466"/>
+            <Item icon={<Phone/>} title="Give Us a Call" text="+971 501088466"/>
             <Item icon={<Mail/>}  title="Send Us a Message" text="info@getinfo.ae"/>
           </div>
         </Card>
