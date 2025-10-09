@@ -20,9 +20,12 @@ export default function Intro() {
         </div>
 
         {/* Right intro text (like your mock) */}
-        <div className="md:col-span-6 text-white/80 leading-relaxed text-[clamp(1.05rem,2.2vw,1.5rem)]">
-        We believe the way people access information is outdated. Traditional info desks and static kiosks 
-        are often slow, limited, and difficult to scale. Visitors deserve a smarter, faster, and more engaging way to get answers.
+        <div className="md:col-span-6 text-white/80 leading-relaxed text-[clamp(0.9rem,1.8vw,1.2rem)]
+">
+        We believe the way people access information is outdated. Traditional info desks and static kiosks are often slow, limited, and difficult to scale. Visitors deserve a smarter, faster, and more engaging way to get answers.
+            At GetInfo, we’re reimagining the entire experience. Our AI-powered solutions transform how people interact with information, making it accessible, instant, and personalized.
+            Whether it’s at a mall, hotel, event, or educational institution, we provide interactive experiences that are intuitive, multilingual, and responsive. By combining cutting-edge 
+            technology with user-focused design, we ensure that getting information is no longer a hassle—it’s a seamless and engaging journey.
         </div>
       </Container>
 

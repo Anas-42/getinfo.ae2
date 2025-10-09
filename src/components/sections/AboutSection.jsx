@@ -1,3 +1,4 @@
+// src/components/sections/AboutSection.jsx
 import React from "react";
 import Container from "../ui/Container";
 import { Button } from "../ui/Button";
@@ -37,7 +38,7 @@ export default function AboutSection() {
 
   return (
     <section id="about" className="relative overflow-hidden py-16 sm:py-24">
-      {/* responsive background video */}
+      {/* 🎥 Responsive background video */}
       <video
         key={videoSrc}
         className="absolute inset-0 w-full h-full object-cover -z-10"
@@ -47,40 +48,48 @@ export default function AboutSection() {
         muted
         playsInline
         preload="metadata"
-        poster="/videos/intro-.png"
+        poster="/videos/intro.png"
         aria-hidden="true"
       />
 
-      {/* overlay for readability */}
-      <div className="absolute inset-0 bg-black/40 -z-10" />
+      {/* ✨ Overlay for readability */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/80 -z-10" />
 
       <Container className="relative z-10">
-        <div className="mx-auto max-w-3xl text-center space-y-6">
-          <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-white">
-            ABOUT <span className="accent">GetInfo.ae</span>
+        <div className="mx-auto max-w-3xl text-center space-y-6 animate-fadeIn">
+          <h2 className="text-2xl sm:text-4xl font-extrabold tracking-tight text-white drop-shadow-lg">
+            ABOUT{" "}
+            <span className="text-[var(--gi-teal-400)] glow-text">GetInfo.ae</span>
           </h2>
 
           <p
-            className="leading-relaxed text-[clamp(1.05rem,2.2vw,1.5rem)] text-white/80"
+            className="leading-relaxed text-[clamp(0.9rem,1.8vw,1.2rem)] text-white/80"
             style={{
               textShadow: `
-          1px 1px 0 #2aa8bf,
-         -1px 1px 0 #2aa8bf,
-          1px -1px 0 #2aa8bf,
-         -1px -1px 0 #2aa8bf
-        `,
+                -1px -1px 0rgb(255, 255, 255)
+               -1px -1px 0rgb(255, 255, 255)
+                -1px -1px 0rgb(255, 255, 255)
+               -1px -1px 0rgb(255, 255, 255)
+              `,
             }}
           >
-            GetInfo is an AI-powered info desk solution that brings information to life through interactive 3D avatars. Our system listens, understands, and responds in real-time — supporting multiple languages and delivering accurate, domain-specific knowledge instantly.
-            From malls and events to hotels and campuses, GetInfo is designed to be the future of customer interaction.
+            GetInfo is an AI-powered info desk solution that transforms how people
+            access information. Through interactive 3D avatars, our system listens,
+            understands, and responds naturally — supporting multiple languages and
+            delivering instant, accurate answers.
+            <br />
+            <br />
+            From malls and events to hotels and campuses, GetInfo redefines customer
+            interaction — making it smarter, faster, and more human.
           </p>
 
-          <a href="#join" className="block">
-            <Button className="mx-auto">LET&apos;S GET IN TOUCH</Button>
+          <a href="#join" className="block pt-4">
+            <Button size="lg" className="mx-auto gi-btn shine">
+              LET&apos;S GET IN TOUCH
+            </Button>
           </a>
         </div>
       </Container>
-
     </section>
   );
 }

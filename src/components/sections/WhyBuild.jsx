@@ -17,7 +17,8 @@ export default function WhyBuild() {
           </svg>
         </div>
 
-        <div className="md:col-span-6 text-white/80 leading-relaxed text-[clamp(1.05rem,2.2vw,1.5rem)]">
+        <div className="md:col-span-6 text-white/80 leading-relaxed text-[clamp(0.9rem,1.8vw,1.2rem)]
+">
         We built GetInfo to solve a simple problem: making information access effortless and intelligent. Businesses today need scalable solutions that reduce staffing costs while still providing a world-class visitor experience.
         By blending AI, speech technology, and immersive design, we’re transforming the info desk into a tool that is not just functional, but also engaging, modern, and memorable.
         </div>
