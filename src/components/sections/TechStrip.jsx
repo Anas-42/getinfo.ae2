@@ -7,9 +7,9 @@ import unreal from "../../assets/logos/unreal.svg";
 
 export default function TechStrip() {
   const LOGOS = [
-    { src: babylon, alt: "Babylon.js", scale: "scale-100" },
+    { src: babylon, alt: "Babylon.js", scale: "scale-70" },
     { src: blender, alt: "Blender", scale: "scale-60" },
-    { src: unity, alt: "Unity", scale: "scale-100" },   // a little smaller
+    { src: unity, alt: "Unity", scale: "scale-130" },   // a little smaller
     { src: unreal, alt: "Unreal Engine", scale: "scale-60" }, // a little smaller
   ];
 
@@ -17,7 +17,7 @@ export default function TechStrip() {
     <section id="technologies" className="py-16">
       <Container className="text-center">
         <h3 className="font-extrabold text-2xl sm:text-3xl mb-8">
-          TECHNOLOGIES &amp; HARDWARE
+          TECHNOLOGIES
         </h3>
 
         <div className="flex flex-wrap justify-center items-center gap-8">

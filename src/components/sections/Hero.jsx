@@ -88,7 +88,7 @@ export default function Hero() {
 
           <div className="flex justify-center md:justify-start items-center gap-5 pt-2">
             <a href="#join" aria-label="Scroll to join">
-              <Button size="lg">BUILD YOUR WORLD</Button>
+              <Button size="lg">LEARN MORE</Button>
             </a>
             <span className="inline-flex items-center"><ArrowRight /></span>
           </div>
