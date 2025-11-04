@@ -32,8 +32,9 @@ export default function TechStrip() {
         </h3>
       </Container>
 
-      {/* Infinite Logo Slider */}
-      <div className="overflow-hidden w-full">
+      {/* ✅ Responsive logos */}
+      {/* Desktop: animated marquee */}
+      <div className="hidden sm:block overflow-hidden w-full">
         <div className="flex animate-marquee gap-24 sm:gap-32 w-[200%]">
           {[...LOGOS, ...LOGOS].map((l, i) => (
             <div
@@ -55,11 +56,28 @@ export default function TechStrip() {
         </div>
       </div>
 
-      {/* Side Fades */}
-      <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-[var(--gi-bg)] via-[var(--gi-bg)]/80 to-transparent pointer-events-none" />
-      <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-[var(--gi-bg)] via-[var(--gi-bg)]/80 to-transparent pointer-events-none" />
+      {/* Mobile: swipeable horizontal scroll */}
+      <div className="sm:hidden flex overflow-x-auto no-scrollbar gap-12 px-6 snap-x snap-mandatory justify-start">
+        {LOGOS.map((l, i) => (
+          <div
+            key={i}
+            className="snap-center flex-shrink-0 w-[150px] flex items-center justify-center"
+          >
+            <img
+              src={l.src}
+              alt={l.alt}
+              className={`max-w-[120px] object-contain transform ${l.scale} opacity-90 hover:opacity-100 transition-all duration-300 drop-shadow-[0_0_15px_rgba(43,168,191,0.3)]`}
+              draggable="false"
+            />
+          </div>
+        ))}
+      </div>
 
-      {/* Floating animation keyframes */}
+      {/* Side Fades (only desktop) */}
+      <div className="hidden sm:block absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-[var(--gi-bg)] via-[var(--gi-bg)]/80 to-transparent pointer-events-none" />
+      <div className="hidden sm:block absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-[var(--gi-bg)] via-[var(--gi-bg)]/80 to-transparent pointer-events-none" />
+
+      {/* Floating + marquee animations */}
       <style>{`
         @keyframes float {
           0%, 100% { transform: translateY(0); }

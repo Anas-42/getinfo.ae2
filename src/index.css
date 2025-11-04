@@ -196,3 +196,10 @@ html { scroll-behavior: smooth; scroll-padding-top: 72px; }
 .grecaptcha-badge {
   visibility: hidden !important;
 }
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
