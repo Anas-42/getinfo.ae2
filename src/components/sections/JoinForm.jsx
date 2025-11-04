@@ -1,10 +1,9 @@
-// src/components/sections/JoinForm.jsx
-import React, { useState } from "react";
+import React from "react";
 import Container from "../ui/Container";
 import Card from "../ui/Card";
 import { Button } from "../ui/Button";
 
-function Input({ placeholder, type = "text", name, required = false }) {
+function Input({ placeholder, type = "text", name, required=false }) {
   return (
     <input
       type={type}
@@ -17,7 +16,7 @@ function Input({ placeholder, type = "text", name, required = false }) {
   );
 }
 
-function Textarea({ placeholder, rows = 6, name, required = false }) {
+function Textarea({ placeholder, rows = 6, name, required=false }) {
   return (
     <textarea
       rows={rows}
@@ -31,28 +30,32 @@ function Textarea({ placeholder, rows = 6, name, required = false }) {
 }
 
 export default function JoinForm() {
-  const [status, setStatus] = useState("");
+  const toEmail = "info@getinfo.ae"; 
 
-  const onSubmit = async (e) => {
+  const onSubmit = (e) => {
     e.preventDefault();
-    setStatus("sending");
+    const fd = new FormData(e.currentTarget);
+    const first = fd.get("firstName") || "";
+    const last  = fd.get("lastName")  || "";
+    const email = fd.get("email")     || "";
+    const phone = fd.get("phone")     || "";
+    const subj  = fd.get("subject")   || "New inquiry from GetInfo.ae";
+    const msg   = fd.get("message")   || "";
 
-    const formData = new FormData(e.currentTarget);
-    formData.append("access_key", "10431258-a795-4466-b052-d26137dadcfe"); // Replace with your real Web3Forms key
+    const subject = encodeURIComponent(subj);
+    const body = encodeURIComponent(
+`Name: ${first} ${last}
+Email: ${email}
+Phone: ${phone}
 
-    const res = await fetch("https://api.web3forms.com/submit", {
-      method: "POST",
-      body: formData,
-    });
+Message:
+${msg}
 
-    const data = await res.json();
+— sent from getinfo.ae`
+    );
 
-    if (data.success) {
-      setStatus("success");
-      e.target.reset();
-    } else {
-      setStatus("error");
-    }
+    // Open user's mail client with prefilled email
+    window.location.href = `mailto:${toEmail}?subject=${subject}&body=${body}`;
   };
 
   return (
@@ -79,28 +82,9 @@ export default function JoinForm() {
 
               <div className="md:col-span-2 flex justify-center pt-2">
                 <Button size="lg" className="w-full md:w-auto gi-btn shine">
-                  {status === "sending" ? "Sending..." : "SEND EMAIL"}
+                  SEND EMAIL
                 </Button>
               </div>
-
-              {/* ✅ Enhanced Feedback Messages */}
-              {status === "success" && (
-                <div className="text-center mt-6 animate-fadeIn">
-                  <p className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-green-500/10 text-green-300 border border-green-400/30 backdrop-blur-sm">
-                    <span className="text-xl">✅</span>
-                    <span>Your message has been sent successfully! The GetInfo team will reach out soon.</span>
-                  </p>
-                </div>
-              )}
-
-              {status === "error" && (
-                <div className="text-center mt-6 animate-fadeIn">
-                  <p className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-red-500/10 text-red-300 border border-red-400/30 backdrop-blur-sm">
-                    <span className="text-xl">⚠️</span>
-                    <span>Oops! Something went wrong. Please try again later.</span>
-                  </p>
-                </div>
-              )}
             </form>
           </Card>
         </div>
@@ -108,5 +92,3 @@ export default function JoinForm() {
     </section>
   );
 }
-
-// ✨ Optional fade-in animation (add in your global CSS or Tailwind config)

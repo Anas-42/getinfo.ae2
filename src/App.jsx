@@ -6,37 +6,40 @@ import Footer from "./components/layout/Footer";
 
 // Sections
 import Hero from "./components/sections/Hero";
-import ContactStrip from "./components/sections/ContactStrip";
+// import ContactStrip from "./components/sections/ContactStrip"; // removed
 import IntroSection from "./components/sections/IntroSection";
 import AboutSection from "./components/sections/AboutSection";
 import WhyBuild from "./components/sections/WhyBuild";
 import ServicesGrid from "./components/sections/ServicesGrid";
 import TechStrip from "./components/sections/TechStrip";
-import buildpath from "./components/sections/buildpath";
+// import BuildPath from "./components/sections/buildpath";
 import JoinForm from "./components/sections/JoinForm";
+
+// Global unified background
+import SiteBackground from "./components/ui/SiteBackground";
 
 export default function App() {
   return (
-    <div id="top" className="min-h-dvh bg-[var(--gi-bg)] text-white isolate">
-      <Navbar />
+    <>
+      {/* One global background behind everything */}
+      <SiteBackground />
 
-      <main className="space-y-8 sm:space-y-10">
-        <Hero />
-        <ContactStrip />
+      <div id="top" className="min-h-dvh text-white relative">
+        <Navbar />
 
-        {/* 3 requested sections */}
-        <IntroSection />
-        <AboutSection />
-        <WhyBuild />
+        <main className="space-y-8 sm:space-y-10 relative z-10">
+          <Hero />
+          <IntroSection />
+          <AboutSection />
+          <WhyBuild />
+          <ServicesGrid />
+          <SiteBackground />
+          <TechStrip />
+          <JoinForm />
+        </main>
 
-        
-        <ServicesGrid />
-        <TechStrip />
-        <buildpath />
-        <JoinForm />
-      </main>
-
-      <Footer />
-    </div>
+        <Footer />
+      </div>
+    </>
   );
 }

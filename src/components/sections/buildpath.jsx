@@ -2,6 +2,7 @@
 import React from "react";
 import Container from "../ui/Container";
 
+
 const STEPS = [
   { n: "01", t1: "AI Large", t2: "Language Models" },
   { n: "02", t1: "Custom Domain", t2: "Knowledge" },
