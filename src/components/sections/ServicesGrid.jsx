@@ -1,3 +1,4 @@
+// src/components/sections/ServicesGrid.jsx
 import React from "react";
 import Container from "../ui/Container";
 
@@ -51,29 +52,15 @@ const ITEMS = [
 
 function ServiceCard({ item, expanded, onToggle }) {
   return (
-    <div
-      className="
-        h-full rounded-2xl 
-        bg-gradient-to-b from-[rgba(43,168,191,0.12)] to-[rgba(11,25,30,0.7)] 
-        border border-[rgba(43,168,191,0.25)] 
-        hover:border-[rgba(43,168,191,0.6)] 
-        hover:shadow-[0_0_25px_rgba(43,168,191,0.4)] 
-        transition-all duration-300
-        backdrop-blur-sm p-[2px] shadow-[inset_0_0_15px_rgba(43,168,191,0.1)]
-      "
-    >
-      <div className="h-full rounded-2xl bg-[#0b0b0b]/70 p-6 flex flex-col">
+    <div className="h-full rounded-2xl bg-gradient-to-b from-[var(--gi-teal-300)] to-[var(--gi-teal-700)] p-[2px] shadow-card">
+      <div className="h-full rounded-2xl bg-black/40 p-6 flex flex-col">
         {/* top illustration */}
         <div className="mx-auto mb-6 w-full max-w-[360px] rounded-[40px] bg-black flex items-center justify-center">
           <img src={item.img} alt="" className="h-[110px] object-contain" />
         </div>
 
-        <h3 className="font-extrabold tracking-wide text-lg text-[var(--gi-teal-300)]">
-          {item.title}
-        </h3>
-        <p className="mt-3 text-sm text-white/85 leading-relaxed">
-          {item.desc}
-        </p>
+        <h3 className="font-extrabold tracking-wide text-lg">{item.title}</h3>
+        <p className="mt-3 text-sm text-white/80 leading-relaxed">{item.desc}</p>
 
         {/* expandable content */}
         <div
@@ -96,15 +83,9 @@ function ServiceCard({ item, expanded, onToggle }) {
             onClick={() => onToggle(item.id)}
             aria-expanded={expanded}
             aria-controls={`${item.id}-more`}
-            className="inline-block focus:outline-none rounded-full"
+            className="inline-block focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--gi-teal-500)] rounded-full"
           >
-            <span
-              className="
-                pill gi-gradient gi-btn shine px-5 py-2.5 text-xs font-bold inline-block
-                bg-[var(--gi-teal-600)] hover:bg-[var(--gi-teal-500)] 
-                text-white shadow-[0_0_15px_rgba(43,168,191,0.4)]
-              "
-            >
+            <span className="pill gi-gradient gi-btn shine px-5 py-2.5 text-xs font-bold inline-block">
               {expanded ? "SHOW LESS" : "LEARN MORE"}
             </span>
           </button>
@@ -119,10 +100,11 @@ export default function ServicesGrid() {
 
   const handleToggle = (id) => {
     setOpenId((cur) => (cur === id ? null : id));
+    // optional: focus management or analytics can be added here
   };
 
   return (
-    <section id="services" className="py-24">
+    <section id="services" className="py-16 sm:py-20">
       <Container className="grid items-stretch gap-6 sm:grid-cols-2 lg:grid-cols-4">
         {ITEMS.map((it) => (
           <ServiceCard
